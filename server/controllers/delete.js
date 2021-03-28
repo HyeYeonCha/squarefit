@@ -6,6 +6,6 @@ module.exports = async (req, res) => {
     await Post.deleteOne({ _id: postId, userId: userId });
     res.status(200).json({ isDeleted: true });
   } catch (err) {
-    res.status(500).json({ error: err });
+    res.status(500).json({ isDeleted: false, error: err });
   }
 };

@@ -20,6 +20,6 @@ module.exports = async (req, res) => {
 
     res.status(200).json({ isCreated: true, newPost });
   } catch (err) {
-    res.status(500).json({ error: err });
+    res.status(500).json({ isCreated: false, error: err });
   }
 };

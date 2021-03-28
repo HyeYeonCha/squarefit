@@ -6,6 +6,6 @@ module.exports = async (req, res) => {
     const post = await Post.findOne({ _id: postId });
     res.status(200).json({ getPost: true, post });
   } catch (err) {
-    res.status(500).json({ error: err });
+    res.status(500).json({ getPost: false, error: err });
   }
 };
